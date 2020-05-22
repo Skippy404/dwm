@@ -9,6 +9,7 @@ all: clean build xsesh bar
 	-@ echo "exec feh --bg-scale $(DIR)/assets/alita.png &" >> sdwm.sh
 	-@ echo "while true; do" >> sdwm.sh
 	-@ echo "xsetroot -name \"\$$($(DIR)/bar.sh)\"" >> sdwm.sh
+	-@ echo "sleep 10 " >> sdwm.sh
 	-@ echo "done &" >> sdwm.sh
 	-@ echo "exec dwm" >> sdwm.sh
 	-@ chmod +x sdwm.sh
