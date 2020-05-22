@@ -11,6 +11,8 @@ all: clean build xsesh bar
 	-@ echo "xsetroot -name \"\$$($(DIR)/bar.sh)\"" >> sdwm.sh
 	-@ echo "sleep 10 " >> sdwm.sh
 	-@ echo "done &" >> sdwm.sh
+	-@ echo "exec lxpolkit &" >> sdwm.sh
+	-@ echo "exec xscreensaver &" >> sdwm.sh
 	-@ echo "exec dwm" >> sdwm.sh
 	-@ chmod +x sdwm.sh
 
