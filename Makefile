@@ -34,10 +34,12 @@ bar:
 	@# Setup vars
 	-@ echo "BS=\"\"" > bar.sh
 	-@ echo "DT=\"\"" >> bar.sh
+	-@ echo "WF=\"\"" >> bar.sh
 	@# Append modules
 	-@ cat ./bar/bat.sh >> bar.sh
 	-@ cat ./bar/date.sh >> bar.sh
-	-@ echo "echo \"\$$DT \$$BS\"" >> bar.sh
+	-@ cat ./bar/wifi.sh >> bar.sh
+	-@ echo "echo \"\$$DT \$$WF \$$BS\"" >> bar.sh
 	-@chmod +x bar.sh
 
 build:
