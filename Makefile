@@ -1,3 +1,4 @@
+.PHONY: bar
 DIR=$(shell pwd)
 
 all: clean build xsesh
@@ -23,6 +24,16 @@ xsesh:
 	sudo rm -f /usr/share/xsessions/dwm.desktop
 	sudo cp $(DIR)/dwm.desktop /usr/share/xsessions/
 
+bar:
+	@# Setup vars
+	-@ echo "BS=\"\"" > bar.sh
+	-@ echo "DT=\"\"" >> bar.sh
+	@# Append modules
+	-@ cat ./bar/bat.sh >> bar.sh
+	-@ cat ./bar/date.sh >> bar.sh
+	-@ echo "echo \"\$$DT \$$BS\"" >> bar.sh
+	-@chmod +x bar.sh
+
 build:
 	-@echo "Building dwm, sudo is needed..."
 	sudo make install -C src/
@@ -30,3 +41,4 @@ build:
 clean:
 	rm -f sdwm.sh
 	rm -f dwm.desktop
+	rm -f bar.sh
