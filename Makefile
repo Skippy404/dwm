@@ -1,6 +1,6 @@
 DIR=$(shell pwd)
 
-all: clean
+all: clean build
 	@# Setup start file
 	-@echo "Creating start script for dwm"
 	-@echo "#!/bin/bash" > sdwm.sh
@@ -10,6 +10,7 @@ all: clean
 	-@chmod +x sdwm.sh
 
 build:
+	-@echo "Building dwm, sudo is needed..."
 	sudo make install -C src/
 
 clean:
