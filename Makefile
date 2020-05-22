@@ -10,7 +10,7 @@ all: clean build xsesh
 	-@ chmod +x sdwm.sh
 
 xsesh:
-	-@ echo "Desktop Entry" > dwm.desktop
+	-@ echo "[Desktop Entry]" > dwm.desktop
 	-@ echo "Name=dwm" >> dwm.desktop
 	-@ echo "Comment=suckless dynamic window manager" >> dwm.desktop
 	-@ echo "Exec=$(DIR)/sdwm.sh" >> dwm.desktop
@@ -21,7 +21,7 @@ xsesh:
 	-@ echo "Keywords=tiling;wm;suckless;" >> dwm.desktop
 	-@ echo "Creating new symlink, sudo is needed..."
 	sudo rm -f /usr/share/xsessions/dwm.desktop
-	sudo ln -s $(DIR)/dwm.desktop /usr/share/xsessions/
+	sudo cp $(DIR)/dwm.desktop /usr/share/xsessions/
 
 build:
 	-@echo "Building dwm, sudo is needed..."
