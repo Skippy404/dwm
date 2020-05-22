@@ -1,12 +1,15 @@
 .PHONY: bar
 DIR=$(shell pwd)
 
-all: clean build xsesh
+all: clean build xsesh bar
 	@# Setup start file
 	-@ echo "Creating start script for dwm"
 	-@ echo "#!/bin/bash" > sdwm.sh
 	-@ echo "exec compton &" >> sdwm.sh
 	-@ echo "exec feh --bg-scale $(DIR)/assets/alita.png &" >> sdwm.sh
+	-@ echo "while true; do" >> sdwm.sh
+	-@ echo "xsetroot -name \"\$$($(DIR)/bar.sh)\"" >> sdwm.sh
+	-@ echo "done &" >> sdwm.sh
 	-@ echo "exec dwm" >> sdwm.sh
 	-@ chmod +x sdwm.sh
 
