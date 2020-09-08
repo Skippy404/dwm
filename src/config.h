@@ -12,12 +12,21 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-//static const char col_cyan[]        = "#005577";
 static const char col_cyan[]        = "#689d6a";
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+static const char normfgcolor[]      = "#ebdbb2";
+static const char normbgcolor[]      = "#282828";
+static const char normbordercolor[]  = "#928374";
+static const char selfgcolor[]       = "#fabd2f";
+static const char selbgcolor[]       = "#32302f";
+static const char selbordercolor[]   = "#fabd2f";
+static const char titlefgcolor[]     = "#fabd2f";
+static const char titlebgcolor[]     = "#282828";
+static const char titlebordercolor[] = "#282828";
+static const char *colors[][3]       = {
+		/*                fg            bg              border           */
+		[SchemeNorm]  = { normfgcolor,  normbgcolor,  normbordercolor  },
+		[SchemeSel]   = { selfgcolor,   selbgcolor,   selbordercolor   },
+		[SchemeTitle] = { titlefgcolor, titlebgcolor, titlebordercolor },
 };
 
 /* tagging */
@@ -30,7 +39,12 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       2,       0,           -1 },
+	{ "Spotify",  NULL,       NULL,       9,       0,           -1 },
+	{ "Discord",  NULL,       NULL,       8,       0,           -1 },
+	{ "quasselclient", NULL,  NULL,       8,       0,           -1 },
+	{ "Element", NULL,  	  NULL,       8,       0,           -1 },
 };
 
 /* layout(s) */
@@ -62,9 +76,13 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *rofi[] = {"rofi","-show", "drun", NULL};
 static const char *xscreensaver[] = {"xscreensaver-command","-activate", NULL};
+static const char *clipmenu[] = {"clipmenu", NULL};
+static const char *clipdel[] = {"clipdel", "-d", ".*", NULL};
 
 static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofi } },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = clipmenu } },
+	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipdel } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xscreensaver } },
 	/* modifier                     key        function        argument */
 	//{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
