@@ -8,7 +8,10 @@ wifi () {
 	BAR="$(echo "$INFO" | cut -d ":" -f 13)"
 	SSID="$(echo "$INFO" | cut -d ":" -f 8)"
 	WF="$SSID $BAR"
-	printf "%s$WF%s" "$SEP1" "$SEP2"
+	if [[ $WF != "" ]]
+	then
+		printf "%s$WF%s" "$SEP1" "$SEP2"
+	fi
 }
 
-cal
+wifi
