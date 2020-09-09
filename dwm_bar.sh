@@ -40,8 +40,7 @@ do
     dispstr="$dispstr$(wifi)"
     dispstr="$dispstr$(bat)"
 
-    #xsetroot -name "$dispstr"
-	echo $dispstr
+    xsetroot -name "$dispstr"
     sleep 5
 
 done
