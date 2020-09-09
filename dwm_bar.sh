@@ -41,6 +41,6 @@ do
     dispstr="$dispstr$(bat)"
 
     xsetroot -name "$dispstr"
-    sleep 5
+    sleep 10
 
 done
