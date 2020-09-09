@@ -1,16 +1,17 @@
 .PHONY: bar
 DIR=$(shell pwd)
 
-all: clean build xsesh bar
+all: clean build xsesh# bar
 	@# Setup start file
 	-@ echo "Creating start script for dwm"
 	-@ echo "#!/bin/bash" > sdwm.sh
 	-@ echo "exec compton &" >> sdwm.sh
 	-@ echo "exec feh --bg-scale $(DIR)/assets/alita.png &" >> sdwm.sh
-	-@ echo "while true; do" >> sdwm.sh
-	-@ echo "xsetroot -name \"\$$($(DIR)/bar.sh)\"" >> sdwm.sh
-	-@ echo "sleep 10 " >> sdwm.sh
-	-@ echo "done &" >> sdwm.sh
+	#-@ echo "while true; do" >> sdwm.sh
+	#-@ echo "xsetroot -name \"\$$($(DIR)/bar.sh)\"" >> sdwm.sh
+	#-@ echo "sleep 10 " >> sdwm.sh
+	#-@ echo "done &" >> sdwm.sh
+	-@ echo "$(DIR)/dwm_bar.sh &" >> sdwm.sh
 	-@ echo "exec lxpolkit &" >> sdwm.sh
 	-@ echo "exec xscreensaver &" >> sdwm.sh
 	-@ echo "exec clipmenud &" >> sdwm.sh
@@ -31,17 +32,17 @@ xsesh:
 	sudo rm -f /usr/share/xsessions/dwm.desktop
 	sudo cp $(DIR)/dwm.desktop /usr/share/xsessions/
 
-bar:
-	@# Setup vars
-	-@ echo "BS=\"\"" > bar.sh
-	-@ echo "DT=\"\"" >> bar.sh
-	-@ echo "WF=\"\"" >> bar.sh
-	@# Append modules
-	-@ cat ./bar/bat.sh >> bar.sh
-	-@ cat ./bar/date.sh >> bar.sh
-	-@ cat ./bar/wifi.sh >> bar.sh
-	-@ echo "echo \"\$$DT \$$WF \$$BS\"" >> bar.sh
-	-@chmod +x bar.sh
+#bar:
+#	@# Setup vars
+#	-@ echo "BS=\"\"" > bar.sh
+#	-@ echo "DT=\"\"" >> bar.sh
+#	-@ echo "WF=\"\"" >> bar.sh
+#	@# Append modules
+#	-@ cat ./bar/bat.sh >> bar.sh
+#	-@ cat ./bar/date.sh >> bar.sh
+#	-@ cat ./bar/wifi.sh >> bar.sh
+#	-@ echo "echo \"\$$DT \$$WF \$$BS\"" >> bar.sh
+#	-@chmod +x bar.sh
 
 build:
 	-@echo "Building dwm, sudo is needed..."
