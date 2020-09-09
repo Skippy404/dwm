@@ -29,3 +29,19 @@ You will be prompted for sudo when it is needed
 ## Usage
 Once installed, when logging in, you will be able to select dwm from your login
 manager.
+
+## Bar
+
+![Bar](assets/bar.png)
+
+* First block  -> Current song.
+* Second block -> Next appointment in your calander (uses calcurse).
+* Third block  -> Date.
+* Fourth block -> Wifi status.
+* Fifth block  -> Battery status (++ means charging, -- means discharging).
+
+## Desktop
+
+![Desktop](assets/dwm.png)
+![Desktop2](assets/dwm2.png)
+![Desktop2](assets/dwm3.png)
