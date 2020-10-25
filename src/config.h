@@ -84,6 +84,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = clipmenu } },
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = clipdel } },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = xscreensaver } },
+	{ MODKEY|ShiftMask,             XK_b,      spawn,          {.v = dmenucmd } },
 	/* modifier                     key        function        argument */
 	//{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
