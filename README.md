@@ -10,6 +10,14 @@ dependences, they are,
 * Make/GNU Make
 * C compiler
 
+### Necessary Dependencies
+These dependencies are needed during runtime, or else things will get wacky,
+The wacky scale goes from 0 (not wacky) to 10 (Giga wacky).
+|Dependency|Wacky Scale|
+|----------|-----------|
+|[feh](https://feh.finalrewind.org/)|10|
+|[compton](https://github.com/chjj/compton)|10|
+
 ### Optional Dependencies
 My dwm fork can be run without these dependences installed, and so these are "soft"
 dependencies, but if you install them, extra features become availiable.
