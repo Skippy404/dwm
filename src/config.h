@@ -1,11 +1,26 @@
 /* See LICENSE file for copyright and license details. */
 
+/* Bar opacity values */
+#define BAR_ZERO    0x00
+#define BAR_HALF    0x80
+#define BAR_QUARTER 0x40
+#define BAR_SOLID   0xFF
+
+/* Colors */
+#define BLACK "#000000"
+#define GRUV_LIGHTGREY "#32302f"
+#define GRUV_GREY "#282828"
+#define GRUV_YELLOW "#fabd2f"
+
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+//static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = BAR_HALF;
+static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -13,20 +28,32 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#689d6a";
+
+/* Windows */
 static const char normfgcolor[]      = "#ebdbb2";
 static const char normbgcolor[]      = "#282828";
 static const char normbordercolor[]  = "#928374";
-static const char selfgcolor[]       = "#fabd2f";
-static const char selbgcolor[]       = "#32302f";
-static const char selbordercolor[]   = "#fabd2f";
-static const char titlefgcolor[]     = "#fabd2f";
-static const char titlebgcolor[]     = "#282828";
-static const char titlebordercolor[] = "#282828";
+
+/* Bar */
+static const char selfgcolor[]       = GRUV_YELLOW;
+static const char selbgcolor[]       = GRUV_GREY;
+static const char selbordercolor[]   = GRUV_YELLOW;
+
+/* Title Text */
+static const char titlefgcolor[]     = GRUV_YELLOW;
+static const char titlebgcolor[]     = GRUV_GREY;
+static const char titlebordercolor[] = GRUV_GREY;
+
 static const char *colors[][3]       = {
 		/*                fg            bg              border           */
 		[SchemeNorm]  = { normfgcolor,  normbgcolor,  normbordercolor  },
 		[SchemeSel]   = { selfgcolor,   selbgcolor,   selbordercolor   },
 		[SchemeTitle] = { titlefgcolor, titlebgcolor, titlebordercolor },
+};
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, baralpha, borderalpha },
 };
 
 /* tagging */
@@ -40,11 +67,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	//{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "Firefox",  NULL,       NULL,       2,       0,           -1 },
-	{ "Spotify",  NULL,       NULL,       9,       0,           -1 },
-	{ "Discord",  NULL,       NULL,       8,       0,           -1 },
-	{ "quasselclient", NULL,  NULL,       8,       0,           -1 },
-	{ "Element", NULL,  	  NULL,       8,       0,           -1 },
 };
 
 /* layout(s) */
