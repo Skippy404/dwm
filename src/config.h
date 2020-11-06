@@ -2,15 +2,19 @@
 
 /* Bar opacity values */
 #define BAR_ZERO    0x00
+#define BAR_TWENTY  0x33
 #define BAR_HALF    0x80
-#define BAR_QUARTER 0x40
+#define BAR_SEVFIVE 0x40
+#define BAR_EIGHTY  0xCC
 #define BAR_SOLID   0xFF
 
 /* Colors */
-#define BLACK "#000000"
+#define BLACK          "#000000"
+#define SEAFOAM        "#93E9BE"
+
 #define GRUV_LIGHTGREY "#32302f"
-#define GRUV_GREY "#282828"
-#define GRUV_YELLOW "#fabd2f"
+#define GRUV_GREY      "#282828"
+#define GRUV_YELLOW    "#fabd2f"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -19,7 +23,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 //static const unsigned int baralpha = 0xd0;
-static const unsigned int baralpha = BAR_HALF;
+static const unsigned int baralpha = BAR_EIGHTY;
 static const unsigned int borderalpha = OPAQUE;
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
