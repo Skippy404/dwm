@@ -6,7 +6,7 @@
 bat () {
 	BATT=$(acpi -b | sed 's/.*[charging|unkown], \([0-9]*\)%.*/\1/gi')
 	STAT=$(acpi -b | sed 's/.*: \([a-zA-Z]*\),.*/\1/gi')
-	[ $STAT = "Charging" ] && STAT="++" || STAT="--"
+	[[ $STAT = "Charging" ]] && STAT="++" || STAT="--"
 	BS="$BATT$STAT"
 	printf "%s$BS%s" "$SEP1" "$SEP2"
 }
