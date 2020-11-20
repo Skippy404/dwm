@@ -28,19 +28,23 @@ export SEP2="]"
 . "$DIR/bar/bat.sh"
 . "$DIR/bar/cal.sh"
 
-# Update dwm status bar every second
-while true
-do
 
-    # Append results of each func one by one to a string
-    dispstr=""
-    dispstr="$dispstr$(dwm_spotify)"
-    dispstr="$dispstr$(cal)"
-    dispstr="$dispstr$(dwm_date)"
-    dispstr="$dispstr$(wifi)"
-    dispstr="$dispstr$(bat)"
+if [ $(command -v slstatus) ]
+then
+	slstatus
+else
+	while true
+	do
 
-    xsetroot -name "$dispstr"
-    sleep 10
+		# Append results of each func one by one to a string
+		dispstr=""
+		dispstr="$dispstr$(dwm_spotify)"
+		dispstr="$dispstr$(cal)"
+		dispstr="$dispstr$(dwm_date)"
+		dispstr="$dispstr$(wifi)"
+		dispstr="$dispstr$(bat)"
 
-done
+		xsetroot -name "$dispstr"
+		sleep 10
+	done
+fi
