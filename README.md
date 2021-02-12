@@ -26,6 +26,7 @@ dependencies, but if you install them, extra features become availiable.
 |----------|-------|
 |acpi|Battery Information|
 |nmcli|Display WiFi Information|
+|[Herbe](https://github.com/skiqqy/herbe)|Displays a warning when your battery gets low|
 
 ## Installing
 Simply type,

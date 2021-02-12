@@ -11,6 +11,7 @@ all: clean build xsesh
 	-@ echo "exec lxpolkit &" >> sdwm.sh
 	-@ echo "exec xscreensaver &" >> sdwm.sh
 	-@ echo "exec clipmenud &" >> sdwm.sh
+	-@ echo "exec $(DIR)/misc/batd.sh &" >> sdwm.sh
 	-@ echo "exec dwm" >> sdwm.sh
 	-@ chmod +x sdwm.sh
 
