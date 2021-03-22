@@ -6,7 +6,7 @@ all: clean build xsesh
 	-@ echo "Creating start script for dwm"
 	-@ echo "#!/bin/bash" > sdwm.sh
 	-@ echo "exec compton &" >> sdwm.sh
-	-@ echo "exec feh --bg-scale $(DIR)/assets/alita.png &" >> sdwm.sh
+	-@ echo "exec feh --bg-scale $(DIR)/assets/neon.jpg &" >> sdwm.sh
 	-@ echo "$(DIR)/dwm_bar.sh &" >> sdwm.sh
 	-@ echo "exec lxpolkit &" >> sdwm.sh
 	-@ echo "exec xscreensaver &" >> sdwm.sh

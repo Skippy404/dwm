@@ -9,8 +9,14 @@
 #define BAR_SOLID   0xFF
 
 /* Colors */
+#define GREY_WHITE     "#ebdbb2"
 #define BLACK          "#000000"
 #define SEAFOAM        "#93E9BE"
+
+/* Neon */
+#define NEON_PURPLE    "#8d66d3"
+#define NEON_PINK_GREY "#fbe8fe"
+#define NEON_PINK      "#f87bfe"
 
 #define GRUV_LIGHTGREY "#32302f"
 #define GRUV_GREY      "#282828"
@@ -35,17 +41,17 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#689d6a";
 
 /* Windows */
-static const char normfgcolor[]      = "#ebdbb2";
+static const char normfgcolor[]      = NEON_PINK_GREY;//"#ebdbb2";
 static const char normbgcolor[]      = "#282828";
 static const char normbordercolor[]  = "#928374";
 
 /* Bar */
-static const char selfgcolor[]       = GRUV_YELLOW;
+static const char selfgcolor[]       = NEON_PINK;//GRUV_YELLOW;
 static const char selbgcolor[]       = GRUV_GREY;
-static const char selbordercolor[]   = GRUV_YELLOW;
+static const char selbordercolor[]   = NEON_PINK;//GRUV_YELLOW;
 
 /* Title Text */
-static const char titlefgcolor[]     = GRUV_YELLOW;
+static const char titlefgcolor[]     = NEON_PINK;//GRUV_YELLOW;
 static const char titlebgcolor[]     = GRUV_GREY;
 static const char titlebordercolor[] = GRUV_GREY;
 
